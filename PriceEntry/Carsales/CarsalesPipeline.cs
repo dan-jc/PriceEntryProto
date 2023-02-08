@@ -1,7 +1,6 @@
-﻿using PriceEntry.Carsales;
-using PriceEntry.Carsales.PipeSections;
+﻿using PriceEntry.Carsales.PipeSections;
 
-namespace PriceEntry;
+namespace PriceEntry.Carsales;
 
 public class CarsalesPipeline : IPipeline
 {

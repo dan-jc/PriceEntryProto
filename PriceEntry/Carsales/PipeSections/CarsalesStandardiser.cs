@@ -1,4 +1,7 @@
-﻿namespace PriceEntry.Carsales.PipeSections;
+﻿using PriceEntry.Auction.RecordTypes;
+using PriceEntry.Carsales.RecordTypes;
+
+namespace PriceEntry.Carsales.PipeSections;
 
 public interface ICarsalesStandardiser
 {

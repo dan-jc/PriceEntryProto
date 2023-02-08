@@ -7,7 +7,7 @@ public interface ICarsalesMapper
     CarsalesMappedRecord Run(CarsalesCleansedRecord cleansedRecord);
 }
 
-public class CarsaleMapper :  ICarsalesMapper
+public class CarsalesMapper :  ICarsalesMapper
 {
     public CarsalesMappedRecord Run(CarsalesCleansedRecord cleansedRecord)
     {

@@ -1,16 +1,15 @@
-﻿using PriceEntry.Carsales.RecordTypes;
+﻿using PriceEntry.Auction.RecordTypes;
 
-namespace PriceEntry.Carsales.PipeSections;
+namespace PriceEntry.Auction.PipeSections;
 
-public interface ICarsalesCleanser
+public interface IAuctionCleanser
 {
-    //WordCleanser WordCleanser { get; set; }
-    public CarsalesCleansedRecord Run(CarsalesRawRecord record);
+    public AuctionCleansedRecord Run(AuctionRawRecord record);
 }
 
-public class CarsalesCleanser : ICarsalesCleanser
+public class AuctionCleanser : IAuctionCleanser
 {
-    public CarsalesCleanser(IWordCleanser wordCleanser)
+    public AuctionCleanser(IWordCleanser wordCleanser)
     {
         _wordCleanser = wordCleanser;
     }
@@ -18,12 +17,10 @@ public class CarsalesCleanser : ICarsalesCleanser
     private IWordCleanser _wordCleanser { get; set; }
        
         
-    public CarsalesCleansedRecord Run(CarsalesRawRecord record)
+    public AuctionCleansedRecord Run(AuctionRawRecord record)
     {
-        var cleansedData = new CarsalesCleansedRecord
+        var cleansedData = new AuctionCleansedRecord
         {
-
-
             Id = record.Id,
             Make = _wordCleanser.CleanseWord(record.Make),
             Price = CleanPrice(record.Price)
@@ -35,6 +32,4 @@ public class CarsalesCleanser : ICarsalesCleanser
     {
         return int.TryParse(price.Replace(",", ""), out var cleanedPrice) ? cleanedPrice : 0;
     }
-
-    
 }

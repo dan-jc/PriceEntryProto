@@ -1,12 +1,12 @@
-﻿namespace PriceEntry.Carsales.RecordTypes;
+﻿namespace PriceEntry.Auction.RecordTypes;
 
-public class CarsalesRawRecord
+public class AuctionRawRecord
 {
     public Guid Id { get; set; }
     public string Make { get; set; }
     public string Price { get; set; }
 
-    public CarsalesRawRecord(Guid id, string make, string price)
+    public AuctionRawRecord(Guid id, string make, string price)
     {
         Id = id;
         Make = make;
