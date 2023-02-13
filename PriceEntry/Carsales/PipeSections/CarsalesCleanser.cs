@@ -4,7 +4,7 @@ namespace PriceEntry.Carsales.PipeSections;
 
 public interface ICarsalesCleanser
 {
-    public CarsalesCleansedRecord Run(CarsalesRawRecord record);
+    public CarsalesCleansedRecord Cleanse(CarsalesRawRecord record);
 }
 
 public class CarsalesCleanser : ICarsalesCleanser
@@ -17,7 +17,7 @@ public class CarsalesCleanser : ICarsalesCleanser
     private IWordCleanser _wordCleanser { get; set; }
        
         
-    public CarsalesCleansedRecord Run(CarsalesRawRecord record)
+    public CarsalesCleansedRecord Cleanse(CarsalesRawRecord record)
     {
         var cleansedMake = _wordCleanser.CleanseWord(record.Make);
         var cleansedPrice = CleanPrice(record.Price);

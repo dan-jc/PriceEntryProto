@@ -2,14 +2,14 @@
 
 namespace PriceEntry.Carsales.PipeSections;
 
-public interface ICarsalesMapper
+public interface ICarsalesMatcher
 {
-    CarsalesMappedRecord Run(CarsalesCleansedRecord cleansedRecord);
+    CarsalesMappedRecord Match(CarsalesCleansedRecord cleansedRecord);
 }
 
-public class CarsalesMapper :  ICarsalesMapper
+public class CarsalesMatcher :  ICarsalesMatcher
 {
-    public CarsalesMappedRecord Run(CarsalesCleansedRecord cleansedRecord)
+    public CarsalesMappedRecord Match(CarsalesCleansedRecord cleansedRecord)
     {
         return new CarsalesMappedRecord(cleansedRecord.Id, "RedbookCode", cleansedRecord.Make, cleansedRecord.Price);
     }
