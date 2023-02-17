@@ -4,12 +4,12 @@ namespace PriceEntry.Carsales.PipeSections;
 
 public interface ICarsalesCollector
 {
-    CarsalesRawRecord Run();
+    CarsalesRawRecord Collect();
 }
 
 public class CarsalesCollector : ICarsalesCollector
 {
-    public CarsalesRawRecord Run()
+    public CarsalesRawRecord Collect()
     {
         return new CarsalesRawRecord(Guid.NewGuid(), "FoRd", "20,000");
     }
